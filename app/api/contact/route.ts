@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br>")
 
   const { error } = await resend.emails.send({
-    from: "mohtesham.com <onboarding@resend.dev>", // update to contact@mohtesham.com after domain verified in Resend
+    from: "mohtesham.com <contact@mohtesham.com>",
     to: ["asifmohtesham@gmail.com"],
     subject: `New message from ${safeName}`,
     html: `
