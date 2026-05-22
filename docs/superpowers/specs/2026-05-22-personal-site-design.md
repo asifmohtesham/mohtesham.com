@@ -32,8 +32,7 @@ Secondary requirement: host legally compliant **privacy policy pages** for both 
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage — full scroll story |
-| `/privacy/beautyre` | Privacy policy for BeautyRe app |
-| `/privacy/milanoleather` | Privacy policy for Milano Leather app |
+| `/privacy` | Single generic privacy policy page (covers all apps) |
 
 ---
 
@@ -127,18 +126,20 @@ Fixed glass-blur top bar (`backdrop-filter: blur(12px)`, semi-transparent `bg-ba
 
 ### 5.6 Footer
 - Minimal single row: `© 2026 Asif Mohtesham · Dubai, UAE`
-- Right: "Privacy" dropdown or two links → Privacy (BeautyRe) · Privacy (Milano Leather)
+- Right: "Privacy Policy" link → `/privacy`
 - Faint gradient line above
 
 ---
 
-## 6. Privacy Policy Pages (`/privacy/beautyre` and `/privacy/milanoleather`)
+## 6. Privacy Policy Page (`/privacy`)
 
-### 6.1 Shared structure
-Both pages follow the same template, with company-specific names, app names, and contact details substituted. Styled minimally (dark bg, readable prose) — no animations, fast to load, easy for app reviewers to parse.
+### 6.1 Structure
+A single page, written generically to cover any app operated by Asif Mohtesham / his ventures. No app-specific names in the policy text — the operator is "Asif Mohtesham and associated applications". This single URL is submitted to both Apple App Store and Google Play for all apps.
+
+Styled minimally (dark bg, readable prose) — no animations, fast to load, easy for app reviewers to parse.
 
 ### 6.2 Sections covered (required for App Store / Play Store)
-1. **Introduction** — what the app is, who operates it, effective date
+1. **Introduction** — who operates the apps, effective date, scope ("this policy applies to all mobile applications published by Asif Mohtesham")
 2. **Information We Collect**:
    - Account registration: name, email, password (hashed)
    - Payment information: processed via third-party gateway (PCI-compliant); card details never stored on our servers
@@ -154,9 +155,8 @@ Both pages follow the same template, with company-specific names, app names, and
 9. **Changes to This Policy** — update notification process
 10. **Contact Us** — email address and mailing address (Dubai, UAE)
 
-### 6.3 URL format
-- `https://mohtesham.com/privacy/beautyre` — submitted to Apple App Store and Google Play as the privacy policy URL for BeautyRe app
-- `https://mohtesham.com/privacy/milanoleather` — submitted for Milano Leather app
+### 6.3 URL
+- `https://mohtesham.com/privacy` — single URL submitted to Apple App Store and Google Play for all apps
 
 ---
 
@@ -207,10 +207,7 @@ mohtesham.com/
 │   │   └── contact/
 │   │       └── route.ts        # POST handler → Resend
 │   └── privacy/
-│       ├── beautyre/
-│       │   └── page.tsx        # BeautyRe privacy policy
-│       └── milanoleather/
-│           └── page.tsx        # Milano Leather privacy policy
+│       └── page.tsx            # Generic privacy policy (all apps)
 ├── components/
 │   ├── Nav.tsx
 │   ├── sections/
