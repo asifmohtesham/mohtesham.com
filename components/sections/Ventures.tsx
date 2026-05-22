@@ -32,6 +32,8 @@ export default function Ventures() {
 
   useGSAP(
     () => {
+      const cleanups: (() => void)[] = []
+
       sectionRef.current?.querySelectorAll<HTMLElement>(".venture-card").forEach((card, i) => {
         gsap.from(card, {
           x: VENTURES[i].fromX,
@@ -45,18 +47,27 @@ export default function Ventures() {
         const quickX = gsap.quickTo(card, "rotateY", { duration: 0.4, ease: "power2.out" })
         const quickY = gsap.quickTo(card, "rotateX", { duration: 0.4, ease: "power2.out" })
 
-        card.addEventListener("mousemove", (e: MouseEvent) => {
+        const handleMouseMove = (e: MouseEvent) => {
           const rect = card.getBoundingClientRect()
           const x = (e.clientX - rect.left) / rect.width - 0.5
           const y = (e.clientY - rect.top) / rect.height - 0.5
           quickX(x * 8)
           quickY(-y * 8)
-        })
-        card.addEventListener("mouseleave", () => {
+        }
+        const handleMouseLeave = () => {
           quickX(0)
           quickY(0)
+        }
+
+        card.addEventListener("mousemove", handleMouseMove)
+        card.addEventListener("mouseleave", handleMouseLeave)
+        cleanups.push(() => {
+          card.removeEventListener("mousemove", handleMouseMove)
+          card.removeEventListener("mouseleave", handleMouseLeave)
         })
       })
+
+      return () => cleanups.forEach((fn) => fn())
     },
     { scope: sectionRef },
   )

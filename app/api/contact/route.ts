@@ -3,6 +3,15 @@ import { Resend } from "resend"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
+
 export async function POST(req: NextRequest) {
   let body: Record<string, string> | null = null
   try {
@@ -23,15 +32,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 })
   }
 
+  const safeName    = escapeHtml(name)
+  const safeEmail   = escapeHtml(email)
+  const safeMessage = escapeHtml(message).replace(/\n/g, "<br>")
+
   const { error } = await resend.emails.send({
     from: "mohtesham.com <onboarding@resend.dev>", // update to contact@mohtesham.com after domain verified in Resend
     to: ["asifmohtesham@gmail.com"],
-    subject: `New message from ${name}`,
+    subject: `New message from ${safeName}`,
     html: `
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Name:</strong> ${safeName}</p>
+      <p><strong>Email:</strong> ${safeEmail}</p>
       <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, "<br>")}</p>
+      <p>${safeMessage}</p>
     `,
   })
 

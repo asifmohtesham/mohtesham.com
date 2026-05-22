@@ -31,22 +31,32 @@ export default function Expertise() {
 
   useGSAP(
     () => {
-      gsap.from(".pillar", {
-        y: 40,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.7,
-        ease: "power2.out",
-        scrollTrigger: { trigger: ".pillars-grid", start: "top 80%", once: true },
-      })
-      gsap.from(".skill-tag", {
-        scale: 0.7,
-        opacity: 0,
-        stagger: 0.04,
-        duration: 0.4,
-        ease: "back.out(1.7)",
-        scrollTrigger: { trigger: ".tags-cloud", start: "top 85%", once: true },
-      })
+      const pillars = sectionRef.current?.querySelectorAll(".pillar")
+      const tags = sectionRef.current?.querySelectorAll(".skill-tag")
+      const pillarsGrid = sectionRef.current?.querySelector(".pillars-grid")
+      const tagsCloud = sectionRef.current?.querySelector(".tags-cloud")
+
+      if (pillars && pillarsGrid) {
+        gsap.from(pillars, {
+          y: 40,
+          opacity: 0,
+          stagger: 0.15,
+          duration: 0.7,
+          ease: "power2.out",
+          scrollTrigger: { trigger: pillarsGrid, start: "top 80%", once: true },
+        })
+      }
+
+      if (tags && tagsCloud) {
+        gsap.from(tags, {
+          scale: 0.7,
+          opacity: 0,
+          stagger: 0.04,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+          scrollTrigger: { trigger: tagsCloud, start: "top 85%", once: true },
+        })
+      }
     },
     { scope: sectionRef },
   )

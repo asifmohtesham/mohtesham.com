@@ -16,9 +16,11 @@ export default function About() {
 
   useGSAP(
     () => {
+      let split: InstanceType<typeof SplitText> | null = null
+
       const bio = sectionRef.current?.querySelector<HTMLElement>(".about-bio")
       if (bio) {
-        const split = new SplitText(bio, { type: "words" })
+        split = new SplitText(bio, { type: "words" })
         gsap.from(split.words, {
           y: 20,
           opacity: 0,
@@ -46,6 +48,10 @@ export default function About() {
           },
         })
       })
+
+      return () => {
+        split?.revert()
+      }
     },
     { scope: sectionRef },
   )

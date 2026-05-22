@@ -1,5 +1,6 @@
-import { describe, it, expect, vi } from "vitest"
+import { describe, it, expect, vi, beforeAll } from "vitest"
 import { NextRequest } from "next/server"
+import type { POST as POSTType } from "@/app/api/contact/route"
 
 vi.mock("resend", () => ({
   Resend: vi.fn().mockImplementation(function () {
@@ -11,7 +12,12 @@ vi.mock("resend", () => ({
   }),
 }))
 
-const { POST } = await import("@/app/api/contact/route")
+let POST: typeof POSTType
+
+beforeAll(async () => {
+  const mod = await import("@/app/api/contact/route")
+  POST = mod.POST
+})
 
 function makeReq(body: Record<string, string>) {
   return new NextRequest("http://localhost:3000/api/contact", {
