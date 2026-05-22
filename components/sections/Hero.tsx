@@ -6,7 +6,7 @@ import ParticleBackground from "@/components/ParticleBackground"
 // Suppress unused import lint — TextPlugin is registered via lib/gsap.ts
 void TextPlugin
 
-const ROLES = ["Founder_", "Engineer_", "Consultant_"]
+const ROLES = ["Founder", "Engineer", "Consultant"]
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null)
@@ -80,6 +80,10 @@ export default function Hero() {
             ref={roleRef}
             className="bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent"
           />
+          <span
+            aria-hidden="true"
+            className="animate-blink bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent"
+          >|</span>
         </div>
 
         <div className="hero-ctas flex flex-col sm:flex-row gap-4 justify-center">
