@@ -71,7 +71,9 @@ export default function Hero() {
         </p>
 
         <h1 className="text-7xl md:text-9xl font-extrabold tracking-tight text-text-primary mb-6 leading-none">
-          <span className="hero-word inline-block mr-6">Asif</span>
+          <span className="hero-word inline-block mr-6">Muhammad</span>
+          <span className="hero-word inline-block">Asif</span>
+          <br />
           <span className="hero-word inline-block">Mohtesham</span>
         </h1>
 
