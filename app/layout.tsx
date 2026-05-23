@@ -15,6 +15,7 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mohtesham.com"),
   title: "Muhammad Asif Mohtesham — Founder, Engineer, Consultant",
   description:
     "Dubai-based founder, engineer, and consultant. Building BeautyRe and Milano Leather.",
