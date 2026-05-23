@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Asif Mohtesham",
-  description: "Privacy policy for all mobile applications published by Asif Mohtesham.",
+  title: "Privacy Policy — Muhammad Asif Mohtesham",
+  description: "Privacy policy for all mobile applications published by Muhammad Asif Mohtesham.",
 }
 
 const EFFECTIVE_DATE = "22 May 2026"
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-text-primary mb-3">1. Introduction</h2>
             <p>
               This Privacy Policy applies to all mobile applications ("the Apps") published by
-              Asif Mohtesham ("we", "us", "our"), available on the Apple App Store and Google
+              Muhammad Asif Mohtesham ("we", "us", "our"), available on the Apple App Store and Google
               Play Store. By downloading or using any of the Apps, you agree to the collection
               and use of information described in this policy.
             </p>
@@ -178,7 +178,7 @@ export default function PrivacyPage() {
               rights, please contact:
             </p>
             <address className="mt-3 not-italic space-y-1">
-              <p className="text-text-primary font-semibold">Asif Mohtesham</p>
+              <p className="text-text-primary font-semibold">Muhammad Asif Mohtesham</p>
               <p>
                 Email:{" "}
                 <a

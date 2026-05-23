@@ -15,14 +15,14 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Asif Mohtesham — Founder, Engineer, Consultant",
+  title: "Muhammad Asif Mohtesham — Founder, Engineer, Consultant",
   description:
     "Dubai-based founder, engineer, and consultant. Building BeautyRe and Milano Leather.",
   openGraph: {
-    title: "Asif Mohtesham",
+    title: "Muhammad Asif Mohtesham",
     description: "Dubai-based founder, engineer, and consultant.",
     url: "https://mohtesham.com",
-    siteName: "Asif Mohtesham",
+    siteName: "Muhammad Asif Mohtesham",
     locale: "en_US",
     type: "website",
   },

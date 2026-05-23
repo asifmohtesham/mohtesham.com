@@ -69,7 +69,7 @@ export default function About() {
             engineer by trade.
           </h2>
           <p className="about-bio text-text-muted leading-relaxed text-lg">
-            Based in Dubai, UAE, Asif Mohtesham has spent over a decade building consumer
+            Based in Dubai, UAE, Muhammad Asif Mohtesham has spent over a decade building consumer
             platforms and premium product businesses. He founded BeautyRe to bring genuine
             beauty products to UAE customers, and stewards the Milano Leather legacy — a brand
             with 30+ years of artisan craftsmanship. His engineering practice threads both
