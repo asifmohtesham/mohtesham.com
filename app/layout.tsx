@@ -20,8 +20,9 @@ export const metadata: Metadata = {
   description:
     "Dubai-based founder, engineer, and consultant. Building BeautyRe and Milano Leather.",
   openGraph: {
-    title: "Muhammad Asif Mohtesham",
-    description: "Dubai-based founder, engineer, and consultant.",
+    title: "Muhammad Asif Mohtesham — Founder, Engineer, Consultant",
+    description:
+      "Dubai-based founder, engineer, and consultant. Building BeautyRe and Milano Leather. Helping MENA businesses scale their digital operations.",
     url: "https://mohtesham.com",
     siteName: "Muhammad Asif Mohtesham",
     locale: "en_US",
