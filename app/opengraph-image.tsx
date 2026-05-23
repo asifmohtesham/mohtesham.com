@@ -70,6 +70,28 @@ export default function Image() {
             FOUNDER · ENGINEER · CONSULTANT
           </span>
         </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            background: "linear-gradient(135deg, #6c3de8, #e83d9a)",
+            borderRadius: 999,
+            padding: "14px 36px",
+          }}
+        >
+          <span
+            style={{
+              fontSize: 22,
+              fontWeight: 700,
+              color: "#ffffff",
+              letterSpacing: "1px",
+            }}
+          >
+            mohtesham.com →
+          </span>
+        </div>
       </div>
     ),
     { ...size },
